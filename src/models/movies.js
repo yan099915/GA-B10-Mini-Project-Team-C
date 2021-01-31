@@ -2,7 +2,7 @@ const e = require("express");
 
 module.exports = (sequelize, type) => {
     return sequelize.define(
-      "Movies",
+      "movies",
       {
         id: {
           type: type.INTEGER,
@@ -15,17 +15,20 @@ module.exports = (sequelize, type) => {
         genre: {
           type: type.STRING(255),
         },
-        realease_date: {
+        release_date: {
           type: type.DATE,
         },
         director: {
           type: type.STRING(255),
         },
         budget: {
-          type: type.STRING(255),
+          type: type.STRING(50),
         },
         featured_song: {
           type: type.STRING(255),
+        },
+        synopsis: {
+          type: type.STRING(1000),
         }
       },
       {

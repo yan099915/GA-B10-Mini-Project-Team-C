@@ -73,18 +73,20 @@ module.exports = {
   },
 
   update: async (req, res) => {
-    const { email, password } = req.body
+    const { email, password, first_name, last_name } = req.body
     const id = data.id;
 
-    // IF TOKEN VALID USER CAN UPDATE PASSWORD
+    // IF TOKEN VALID USER CAN UPDATE PERSONAL INFORMATION
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    const todoList = await application.updateUser(
+    const updateData = await application.updateUser(
         id,
         email,
-        hashedPassword
+        hashedPassword,
+        first_name,
+        last_name
     )
-    res.send(todoList)
+    res.send(updateData)
   }
 };
