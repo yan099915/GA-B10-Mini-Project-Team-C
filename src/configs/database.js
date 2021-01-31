@@ -9,7 +9,7 @@ const model = {};
 const { USERNAME_DB, PASSWORD_DB, HOST_DB, PORT_DB } = process.env;
 
 // config for connection
-const sequelize = new Sequelize("app-data", USERNAME_DB, PASSWORD_DB, {
+const sequelize = new Sequelize("d5ntv9j13jt3eg", USERNAME_DB, PASSWORD_DB, {
   host: HOST_DB,
   port: PORT_DB,
   dialect: "postgres",
