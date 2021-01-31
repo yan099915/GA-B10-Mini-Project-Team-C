@@ -40,10 +40,12 @@ module.exports = {
     });
   },
 
-  updateUser: async (id, email, password) => {
+  updateUser: async (id, email, password, first_name, last_name) => {
     return await model.Users.update({
         email,
         password,
+        first_name,
+        last_name,
 
     },{
         where: {id: id}
